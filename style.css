@@ -1,5 +1,5 @@
 body {
-    background-color: #5eeb57;
+    background-color: #000000;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
@@ -15,7 +15,7 @@ h1 {
     width: 300px; /* Set the width of the square box */
     height: 300px; /* Set the height of the square box */
     margin: 20px auto; /* Center the box horizontally */
-    border: 2px solid #000000; /* Optional: Add a border to the box */
+    border: 2px solid #eee9e9; /* Optional: Add a border to the box */
     display: flex;
     align-items: center;
     justify-content: center;
