@@ -7,13 +7,14 @@ body {
 }
 
 h1 {
+    font-family: 'Pixelify Sans', sans-serif; /* Apply the new font */
     color: #333;
     margin-top: 20%;
 }
 
 .image-box {
-    width: 300px; /* Set the width of the square box */
-    height: 300px; /* Set the height of the square box */
+    width: 150px; /* Set the width of the square box */
+    height: 150px; /* Set the height of the square box */
     margin: 20px auto; /* Center the box horizontally */
     border: 2px solid #eee9e9; /* Optional: Add a border to the box */
     display: flex;
