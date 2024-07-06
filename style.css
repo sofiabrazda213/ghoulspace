@@ -25,8 +25,6 @@ h1 {
 }
 
 .image-box img {
-    max-width: 100%; /* Make the image cover the entire box */
-    max-height: 50px;
-    width: auto; /* Maintain the aspect ratio of the image */
-    height: auto;
+    width: 50px; /* Maintain the aspect ratio of the image */
+    height: 50px;
 }
