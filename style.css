@@ -1,7 +1,7 @@
 body {
+    background-color: hsl(110, 94%, 69%); /* Change this to any color you prefer */
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
