@@ -41,8 +41,8 @@ body {
 }
 
 .tab-button:hover {
-    background-color: #ddd;
-    color: white;
+    background-color: #f242f5;
+    color: pink;
 }
 
 .tab-button.active {
