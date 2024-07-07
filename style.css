@@ -13,12 +13,12 @@ body {
 
 h1 {
     /*
-    font-family: 'Pixelify Sans', sans-serif; Apply the new font
     color: #333;
     margin-top: 20%; 
     */
     color: #ff6347; /* Currently red*/
-    /*text-align: center;*/
+    font-family: 'Pixelify Sans', sans-serif;
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
 }
