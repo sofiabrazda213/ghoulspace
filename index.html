@@ -34,9 +34,21 @@
             color: white; /* Change text color to white */
         }
 
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: red;
+        }
+
         .container {
+            /*display: flex;
+            height: 100vh;*/
             display: flex;
-            height: 100vh;
+            height: calc(100vh - 40px); /* Adjust height to account for header */
         }
 
         .left-pane, .right-pane {
@@ -52,16 +64,6 @@
         .right-pane {
             background-color: #ff0000; /* Black background */
             padding: 20px;
-        }
-
-        .header {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: red;
         }
 
         .tabs {
@@ -81,7 +83,7 @@
         }
 
         .tabs a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #b300b3; /* Darker blue on hover */
         }
 
         .content img {
