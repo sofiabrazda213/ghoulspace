@@ -12,20 +12,85 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="bow.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
-    <style> /*just trying to keep the background black*/
+    <style> /*just trying to keep the background black
+    
         body {
             background: black;
         }
         h1 {
-            color: #ff6347; /* Currently red*/
+            color: #ff6347; /* Currently red
             font-family: 'Pixelify Sans', sans-serif;
             text-align: center;
             margin-top: 20px;
             margin-bottom: 10px;
-}
+        }
+        */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Pixelify Sans', sans-serif;
+            background-color: black; /* Keep background black */
+            color: white; /* Change text color to white */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-pane, .right-pane {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .left-pane {
+            background-color: #ff0000; /* Red background */
+            padding: 20px;
+        }
+
+        .right-pane {
+            background-color: #000000; /* Black background */
+            padding: 20px;
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tabs {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tabs a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px;
+            background-color: #0000ff; /* Blue background */
+            color: #ffffff; /* White text */
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .tabs a:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .content img {
+            border: 2px solid #0000ff; /* Blue border */
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
+    <!--
     <h1>GhoulSpace</h1>
 
     <div class="tab-bar">
@@ -37,7 +102,27 @@
     <div class="image-box">
         <img src="img.png" width="200px" height="150px">
     </div>
-
+    -->
+    <div class="container">
+        <div class="left-pane">
+            <div class="header">8th Avenue South</div>
+            <div class="map">
+                <!-- Embed your map here -->
+                <img src="path/to/map_image.png" alt="Map">
+            </div>
+        </div>
+        <div class="right-pane">
+            <div class="header">GhoulSpace</div>
+            <div class="tabs">
+                <a class="tab-button active" href="index.html">Home</a>
+                <a class="tab-button" href="art.html">Art</a>
+                <a class="tab-button" href="photos.html">Photos</a>
+            </div>
+            <div class="content">
+                <img src="img.png" width="200px" height="150px" alt="Photo">
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
