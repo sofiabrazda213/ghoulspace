@@ -1,4 +1,4 @@
-/*here*/
+/*here
 body {
     background: black;
     color: white;
@@ -9,6 +9,17 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+}
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Pixelify Sans', sans-serif;
+    background-color: black; /* Keep background black */
+    color: white; /* Change text color to white */
+    display: flex;
 }
 
 header {
@@ -28,25 +39,15 @@ header {
     */
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Pixelify Sans', sans-serif;
-    background-color: black; /* Keep background black */
-    color: white; /* Change text color to white */
-    display: flex;
-    flex-direction: column;
-}
 .container {
-    /*display: flex;
-    height: 100vh;*/
     display: flex;
-    flex: 1;
+    width: 100%;
+    height: calc(100% - 50px);
 }
 
 .left-pane, .right-pane {
     flex: 1;
+    padding: 20px;
     overflow-y: auto;
 }
 
@@ -61,9 +62,8 @@ body, html {
 }
 
 .tabs {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .tabs a {
@@ -125,6 +125,7 @@ body, html {
     background-color: #ddd;
     color: black;
     */
+    background-color: #84e42a;
     text-decoration: underline;
 }
 
