@@ -42,7 +42,16 @@ header {
 }
 
 .right-pane {
-    background-color: #000000; /* Changed to black background */
+    background-color: rgb(27, 27, 94); /* Changed to black background */
+}
+
+/* Style for right pane */
+.right-pane h2 {
+    color: rgb(255, 0, 234); /* heading color */
+}
+
+.right-pane p {
+    color: rgb(146, 120, 206); /* Change paragraph text color */
 }
 
 .tabs {
