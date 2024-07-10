@@ -17,6 +17,7 @@ header {
     font-size: 24px;
     font-weight: bold;
     color: black;
+    border-bottom: 5px solid blue; /* Blue line below header */
 }
 
 .container {
@@ -37,10 +38,11 @@ header {
 
 .left-pane {
     background-color: #000000; /* black background */
+    border-right: 5px solid blue; /* Yellow line between left and right sections */
 }
 
 .right-pane {
-    background-color: #ff0000; /* red background */
+    background-color: #000000; /* Changed to black background */
 }
 
 .tabs {
