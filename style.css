@@ -16,7 +16,7 @@ header {
     padding: 10px;
     font-size: 24px;
     font-weight: bold;
-    color: rgb(255, 0, 0);/*is this the "GhoulSpace"*/
+    color: rgb(255, 0, 0);/*GhoulSpace"*/
     border-bottom: 5px solid blue; /* Blue line below header */
 }
 
