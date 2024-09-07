@@ -18,3 +18,22 @@ function openTab(event, tabName) {
     event.currentTarget.className += " active";
 }
 
+// Get the modal
+var modal = document.getElementById("imageModal");
+
+// Get the image and the modal image element
+var modalImg = document.getElementById("fullImage");
+var captionText = document.getElementById("caption");
+
+// Open the modal and display the clicked image
+function openModal(img) {
+  modal.style.display = "block"; // Show the modal
+  modalImg.src = img.src; // Set modal image source to clicked image
+  captionText.innerHTML = img.alt; // Set caption (if needed)
+}
+
+// Close the modal when the X button is clicked
+function closeModal() {
+  modal.style.display = "none";
+}
+
