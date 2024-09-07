@@ -16,7 +16,7 @@ header {
     padding: 10px;
     font-size: 24px;
     font-weight: bold;
-    color: rgb(255, 0, 0);/*GhoulSpace"*/
+    color: rgb(255, 0, 234);/*GhoulSpace"*/
     border-bottom: 5px solid blue; /* Blue line below header */
 }
 
@@ -161,7 +161,7 @@ header {
     justify-content: center;
   }
   
-  .carousel-img {
+  .carousel img {
     margin: 0 10px; /* Space between images */
     border-radius: 10px;
     height: auto;
