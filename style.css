@@ -157,10 +157,11 @@ header {
   /* Carousel styling */
   .carousel {
     display: flex;
-    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+    flex-wrap: wrap; /* Allow images to wrap to a new row */
+    justify-content: center;
   }
   
-  .carousel img {
+  .carousel-img {
     margin: 0 10px; /* Space between images */
     border-radius: 10px;
     height: auto;
