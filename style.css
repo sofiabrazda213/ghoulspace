@@ -142,3 +142,33 @@ header {
     border: 2px solid #333;
     border-radius: 8px;
 }
+
+/* Carousel container for setting width */
+.carousel-container {
+    width: 100%; /* Adjust to fit your layout */
+    overflow-x: auto; /* Allow horizontal scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Center the carousel */
+    border-radius: 12px;
+  }
+  
+  /* Carousel styling */
+  .carousel {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+  }
+  
+  .carousel img {
+    margin: 0 10px; /* Space between images */
+    border-radius: 10px;
+    height: auto;
+    width: 300px; /* Set a uniform width for the images */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+  }
+  
