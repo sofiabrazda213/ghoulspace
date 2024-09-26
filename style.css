@@ -85,13 +85,13 @@ header {
     text-decoration: none;
     padding: 10px;
     border: 2px solid #007bff;
-    border-radius: 5px;
+    border-radius: 15px;/*All border radius must have 15px to match*/
     transition: background-color 0.3s, color 0.3s;
 }
 
 .tab-button.active {
     background-color: #84e42a;
-    text-decoration: underline;
+    text-decoration: green wavy underline;
 }
 
 .content img {
@@ -126,7 +126,11 @@ header {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin: 0 auto;
     margin-bottom: 20px;
+    width: fit-content;
+    padding: 10px;
+    border-bottom: 2px solid #9900ff;
 }
 
 .tab-button:hover {
