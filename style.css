@@ -165,7 +165,7 @@ header {
 
 /* span - adjusts gap */
 .stars span {
-    margin-right: 20px; /* Adjust the spacing between the stars */
+    margin-right: 40px; /* Adjust the spacing between the stars */
 }
 
 /* Tab Content Styling */
