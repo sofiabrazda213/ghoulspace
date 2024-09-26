@@ -23,6 +23,14 @@ header {
 
 /*Picture of me Styling */
 
+/* Border Styling */
+.custom-border {
+    border: 5px dotted #ec86b9; /* Dashed pink border */
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
 .content img {
     display: block;
     margin: auto;
