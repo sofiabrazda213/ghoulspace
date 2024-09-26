@@ -156,6 +156,13 @@ header {
     margin-top: 10px;
 }
 
+.stars {
+    text-align: center; /* Center the stars */
+    margin-top: 10px; /* Add space above the stars */
+    font-size: 24px; /* Adjust the size of the stars */
+    color: #9900ff; /* Set the color of the stars */
+}
+
 /* Tab Content Styling */
 .tab-content {
     display: none;
