@@ -39,13 +39,13 @@ header {
     /*overflow-y: auto;
     flex-shrink: 0; /* Prevents the panes from shrinking smaller than their width */
     width: 50%;
+    height: 100%;
     padding: 20px;
     border: 2px solid rgb(255, 0, 234);
     border-radius: 15px; /*makes round*/
     box-sizing: border-box;
     overflow-y: auto;
-    /*margin: 10px;
-    height: 100%;*/
+    /*margin: 10px;*/
 }
 
 .left-pane {
