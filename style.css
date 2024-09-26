@@ -75,6 +75,8 @@ header {
     color: rgb(146, 120, 206); /* Change paragraph text color */
 }
 
+/*Tab Button Styling*/
+
 .tabs {
     display: flex;
     flex-direction: column;
@@ -83,7 +85,7 @@ header {
 .tab-button {
     color: #007bff;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 20px;
     border: 2px solid #007bff;
     border-radius: 15px;/*All border radius must have 15px to match*/
     transition: background-color 0.3s, color 0.3s;
@@ -92,6 +94,11 @@ header {
 .tab-button.active {
     background-color: #84e42a;
     text-decoration: green wavy underline;
+    color: #fff
+}
+
+.tabs a:hover {
+    background-color: #b300b3; /* pink on hover */
 }
 
 .content img {
@@ -112,17 +119,8 @@ header {
     margin: auto;
 }
 
-.tabs a:hover {
-    background-color: #b300b3; /* pink on hover */
-}
-
 /* Tab Bar Styling */
 .tab-bar {
-    /*
-    background-color: #333;
-    margin-bottom: 100px;
-    padding: 10px 0;
-    */
     display: flex;
     justify-content: center;
     gap: 30px;
