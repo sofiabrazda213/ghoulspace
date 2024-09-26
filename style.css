@@ -27,8 +27,9 @@ header {
     /*justify content: space bwetee*/
     /* align-items: flex-start; /* Align items to the top */
     width: 100%;
-    height: calc(100vh - 60px); /* Ensure it takes full width of the page wass 100% now calc */
+    height: 100vh; /* Ensure it takes full width of the page wass 100% now calc */
     /* padding: 20px; /* Add some padding around the container */
+    box-sizing: border-box;
     overflow: hidden; /* should prevent horizantal scrolling */
 }
 
@@ -39,6 +40,7 @@ header {
     flex-shrink: 0; /* Prevents the panes from shrinking smaller than their width */
     width: 50%;
     border: 2px solid rgb(255, 0, 234);
+    border-radius: 15px; /*makes round*/
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
