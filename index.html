@@ -15,17 +15,19 @@
 </head>
 <body>
     <header>GhoulSpace</header>
+    <div class="tabs">
+        <a class="tab-button active" href="index.html">Home</a>
+        <a class="tab-button" href="art.html">Art</a>
+        <a class="tab-button" href="photos.html">Photos</a>
+    </div>
     <div class="container">
         <div class="left-pane">
             <!-- Left pane content here -->
-                <div class="tabs">
-                    <a class="tab-button active" href="index.html">Home</a>
-                    <a class="tab-button" href="art.html">Art</a>
-                    <a class="tab-button" href="photos.html">Photos</a>
-                </div>
+            
                 <div class="content">
                     <img src="muahxoxo.png" width="400px" height="300px" alt="Photo">
                 </div>
+                <!-- Put guestbook here-->
                 <h2>Guestbook</h2>
                 <form action="submission_guestbook.php" method="POST">
                     <label for="name">Name:</label>
@@ -34,7 +36,6 @@
                     <textarea id="message" name="message" required></textarea><br><br>
                     <input type="submit" value="Submit">
                 </form>
-            <!-- Put guestbook here-->
             </div>
         </div>
         <div class="right-pane">

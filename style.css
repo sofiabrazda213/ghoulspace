@@ -23,7 +23,7 @@ header {
 
 .container {
     display: flex; /* Ensures elements inside .container are displayed in a row */
-    /*justify-content: space-between; /* Adds space between the left and right panes */
+    justify-content: space-between; /* Adds space between the left and right panes */
     align-items: flex-start; /* Align items to the top */
     height: 100%; /* Ensure it takes full width of the page */
     padding: 20px; /* Add some padding around the container */
@@ -38,15 +38,15 @@ header {
 }
 
 .left-pane {
-    width: 35%; /* Adjust width as needed */
+    width: 40%; /* Adjust width as needed */
     background-color: #000000; /* Black background */
     padding: 20px;
-    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    box-sizing: border-box; /* Ensure paddfing doesn't overflow */
     overflow-y: auto; /* Enables scrolling if content overflows */
 }
 
 .right-pane {
-    width: 65%; /* Adjust width as needed */
+    width: 55%; /* Adjust width as needed */
     background-color: #1a1a1a; /* Dark background */
     padding: 20px;
     color: #ffffff;
@@ -88,6 +88,12 @@ header {
     margin: auto;
     border-radius: 10px;
     border: 3px solid #ff00ff; /* Bright border for image */
+}
+
+.right-pane iframe {
+    width: 100%;
+    height 380px;
+    border-radius: 12px;
 }
 
 .section img {
