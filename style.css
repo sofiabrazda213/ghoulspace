@@ -148,7 +148,7 @@ header {
 }
 
 .tab-bar::after {
-    content: '★ ★ ★';
+    /*content: '★ ★ ★';*/
     display: block;
     text-align: center;
     color: #9900ff;
@@ -159,8 +159,12 @@ header {
 .stars {
     text-align: center; /* Center the stars */
     margin-top: 10px; /* Add space above the stars */
-    font-size: 24px; /* Adjust the size of the stars */
-    color: #9900ff; /* Set the color of the stars */
+    font-size: 12px; /* Adjust the size of the stars */
+    color: #ffffff; /* Set the color of the stars */
+}
+
+.stars span {
+    margin-right: 10px; /* Adjust the spacing between the stars */
 }
 
 /* Tab Content Styling */
