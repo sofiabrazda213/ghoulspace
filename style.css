@@ -145,7 +145,6 @@ header {
     margin-bottom: 20px;
     width: fit-content;
     padding: 10px;
-    border-bottom: 2px solid #9900ff;
 }
 
 .tab-bar::after {
