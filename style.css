@@ -163,8 +163,9 @@ header {
     color: #ffffff; /* Set the color of the stars */
 }
 
+/* span - adjusts gap */
 .stars span {
-    margin-right: 10px; /* Adjust the spacing between the stars */
+    margin-right: 20px; /* Adjust the spacing between the stars */
 }
 
 /* Tab Content Styling */
