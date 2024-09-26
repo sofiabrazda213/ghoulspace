@@ -105,6 +105,7 @@ header {
 
 /*Tab Button Styling*/
 
+/* .tabs - Might be unused*/
 .tabs {
     display: flex;
     flex-direction: column;
@@ -135,7 +136,7 @@ header {
 }
 
 /* Tab Bar Styling */
-/* this was controlling art/photos */
+/* this is controlling home/art/photos */
 .tab-bar {
     display: flex;
     justify-content: center;
