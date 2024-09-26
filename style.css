@@ -163,9 +163,23 @@ header {
     color: #ffffff; /* Set the color of the stars */
 }
 
+@keyframes moveStars {
+
+    0% {
+        transform: translateX(0px); /* Start at original position */
+    }
+    50% {
+        transform: translateX(50px); /* Move 50px to the right */
+    }
+    100% {
+        transform: translateX(0px); /* Back to the original position */
+    }
+    
+}
+
 /* span - adjusts gap */
 .stars span {
-    margin-right: 40px; /* Adjust the spacing between the stars */
+    margin-right: 50px; /* Adjust the spacing between the stars */
 }
 
 /* Tab Content Styling */
