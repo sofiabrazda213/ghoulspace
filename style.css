@@ -34,7 +34,7 @@ header {
 .content img {
     display: block;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 3px solid #ff00ff; /* Bright border for image */
 }
 
@@ -82,6 +82,16 @@ header {
     box-sizing: border-box;
     border-radius: 10px;
     */
+}
+
+.spotify-panel, .text-panel {
+    flex: 1; /* Ensures both sections take equal height */
+    background-color: #333333; /* Adjust the color as needed */
+    margin-bottom: 10px; /* Adds space between the panels */
+}
+
+.text-panel {
+    margin-bottom: 0; /* No margin at the bottom of the last panel */
 }
 
 /* Style for right pane */
