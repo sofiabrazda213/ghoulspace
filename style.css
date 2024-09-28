@@ -75,7 +75,7 @@ header {
 
 .right-pane {
     display: flex;
-    background-color: #1a1a1a; /* Dark background */
+    background-color: #1a1a1a; /* Dark background but super black */
     flex-direction: column;
     width: 50%;
     height: 100%;
@@ -89,6 +89,10 @@ header {
     flex: 1; /* Ensures both sections take equal height */
     background-color: #333333; /* Adjust the color as needed */
     margin-bottom: 10px; /* Adds space between the panels */
+    border: 2px rgb(255, 0, 234); /* Pink border around each panel */
+    padding: 20px; /* Add padding inside the panels */
+    box-sizing: border-box;
+    border-radius: 15px;
 }
 
 .text-panel {
@@ -107,7 +111,7 @@ header {
 .right-pane iframe {
     width: 100%;
     height: 380px;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 
 /* Right pane section */
