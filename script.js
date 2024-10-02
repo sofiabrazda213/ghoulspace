@@ -1,7 +1,3 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-
-
 function openTab(event, tabName) {
     var i, tabContent, tabButton;
     
@@ -59,17 +55,15 @@ const db = getFirestore(app);
 
 // Function to submit message
 async function submitMessage(event) {
+  event.preventDefault();
+  
+  const name = document.getElementById("name").value;
+  const message = document.getElementById("message").value;
 
-  event.preventDefault();  // Prevents the form from refreshing the page
-
-  const name = document.getElementById("name").value;  // Get the user's name from input
-  const message = document.getElementById("message").value;  // Get the message content
-
-  // Add data to Firestore
   db.collection("submissions").add({
-    name: "Test Name",
-    message: "Test Message",
-    timestamp: firebase.firestore.FieldValue.serverTimestamp(), // Automatically set timestamp
+    name: name,
+    message: message,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
   })
   .then(() => {
     alert("Message submitted successfully!");
