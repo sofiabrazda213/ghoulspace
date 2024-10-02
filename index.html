@@ -1,28 +1,9 @@
 <!DOCTYPE html>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-<script src="script.js"></script>
-
-<script>
-  // Your Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCgp2JPsJzfStNv5Pmwg64To5bW7ss7eFY",
-    authDomain: "ghoulspace-9f35d.firebaseapp.com",
-    projectId: "ghoulspace-9f35d",
-    storageBucket: "ghoulspace-9f35d.appspot.com",
-    messagingSenderId: "366954255758",
-    appId: "1:366954255758:web:47bf2dbc21e645c209c0df",
-    measurementId: "G-0R5ZGKFY3W"
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
-
 <html lang="en">
 <head>
-    
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="script.js"></script>
     <style>
         body {
             background: black;
@@ -70,6 +51,25 @@
          <span>★</span>
          <span>★</span>
     </div>
+
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCgp2JPsJzfStNv5Pmwg64To5bW7ss7eFY",
+          authDomain: "ghoulspace-9f35d.firebaseapp.com",
+          projectId: "ghoulspace-9f35d",
+          storageBucket: "ghoulspace-9f35d.appspot.com",
+          messagingSenderId: "366954255758",
+          appId: "1:366954255758:web:47bf2dbc21e645c209c0df",
+          measurementId: "G-0R5ZGKFY3W"
+        };
+      
+        // Initialize Firebase
+        if (!firebase.apps.length) {
+          firebase.initializeApp(firebaseConfig);
+      }
+      const db = firebase.firestore();
+      </script>
 
     <div class="container">
         <div class="left-pane">
