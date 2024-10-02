@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+<script src="script.js"></script>
+
 <html lang="en">
 <head>
+    
     <style>
         body {
             background: black;
@@ -70,16 +73,16 @@
                 <iframe style="border-radius:15px" src="https://open.spotify.com/embed/playlist/4XD86M6eJkknX1lsDmmm5x?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <div class="text-panel">
-                <!-- Add some text content here in a <p> </p?> -->
-                <!-- Put guestbook here
                 <h2>Guestbook</h2>
-                <form method="POST" action="submission_guestbook.php">
+                <form onsubmit="submitMessage(); return false;">  <!-- This will call your submitMessage() function (in script.js) to handle the guestbook submission when the user submits the form. -->
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required><br><br>
-                    <label for="message">message:</label>
+                    
+                    <label for="message">Message:</label>
                     <textarea id="message" name="message" required></textarea><br><br>
+                    
                     <input type="submit" value="Submit">
-                </form> -->
+                </form>
             </div>
         </div>
     </div>

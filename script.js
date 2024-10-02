@@ -1,3 +1,6 @@
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+
 function openTab(event, tabName) {
     var i, tabContent, tabButton;
     
@@ -35,5 +38,40 @@ function openModal(img) {
 // Close the modal when the X button is clicked
 function closeModal() {
   modal.style.display = "none";
+}
+
+
+// Firebase (database) configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCgp2JPsJzfStNv5Pmwg64To5bW7ss7eFY",
+  authDomain: "ghoulspace-9f35d.firebaseapp.com",
+  projectId: "ghoulspace-9f35d",
+  storageBucket: "ghoulspace-9f35d.appspot.com",
+  messagingSenderId: "366954255758",
+  appId: "1:366954255758:web:47bf2dbc21e645c209c0df",
+  measurementId: "G-0R5ZGKFY3W"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Function to submit message
+function submitMessage() {
+  const name = document.getElementById("name").value;  // Get the user's name from input
+  const message = document.getElementById("message").value;  // Get the message content
+
+  // Add data to Firestore
+  db.collection("submissions").add({
+    name: name,
+    message: message,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(), // Automatically set timestamp
+  })
+  .then(() => {
+    alert("Message submitted successfully!");
+  })
+  .catch((error) => {
+    console.error("Error writing document: ", error);
+  });
 }
 
