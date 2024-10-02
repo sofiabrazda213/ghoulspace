@@ -58,7 +58,7 @@ const db = getFirestore(app);
 
 // Function to submit message
 async function submitMessage(event) {
-  
+
   event.preventDefault();  // Prevents the form from refreshing the page
 
   const name = document.getElementById("name").value;  // Get the user's name from input
@@ -66,8 +66,8 @@ async function submitMessage(event) {
 
   // Add data to Firestore
   db.collection("submissions").add({
-    name: name,
-    message: message,
+    name: "Test Name",
+    message: "Test Message",
     timestamp: firebase.firestore.FieldValue.serverTimestamp(), // Automatically set timestamp
   })
   .then(() => {
@@ -75,6 +75,7 @@ async function submitMessage(event) {
   })
   .catch((error) => {
     console.error("Error writing document: ", error);
+    alert("Error submitting message: " + error);
   });
 }
 
