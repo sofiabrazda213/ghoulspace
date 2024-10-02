@@ -57,7 +57,7 @@ firebase.initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Function to submit message
-function submitMessage() {
+async function submitMessage() {
   const name = document.getElementById("name").value;  // Get the user's name from input
   const message = document.getElementById("message").value;  // Get the message content
 
