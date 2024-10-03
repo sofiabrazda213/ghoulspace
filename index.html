@@ -19,8 +19,9 @@
         <link rel="icon" href="bow.png" type="image/png">
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
         <div class="header-links">
-            <a href="https://www.instagram.com/ghoulkween/"target="_blank">Instagram</a>
-            <a href="mailto:sofiajaimeb@gmail.com"target="_blank">Email</a>
+            <a href="https://www.instagram.com/ghoulkween/"target="_blank">instagram</a>
+            <a href="mailto:sofiajaimeb@gmail.com"target="_blank">email</a>
+            <a href="https://github.com/sofiabrazda213"target="_blank">github</a>
         </div>
     </div>
 
@@ -99,15 +100,18 @@
             </div>
             <div class="text-panel">
                 <h2>Guestbook</h2>
-                <form onsubmit="submitMessage(event); return false;">  <!-- This will call your submitMessage() function (in script.js) to handle the guestbook submission when the user submits the form. -->
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required><br><br>
-                    
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea><br><br>
-                    
-                    <input type="submit" value="Submit">
-                </form>
+                <!-- modify this form HTML and place wherever you want your form -->
+                <form
+                    action="https://formspree.io/f/mqakzadg" method="POST">    
+                <label for="name">name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for= "message">message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <!-- your other form fields go here -->
+                <button type="submit">submit</button>
+            </form>
             </div>
         </div>
     </div>
