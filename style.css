@@ -13,12 +13,36 @@ body, html {
 header {
     width: 100%;
     background-color: #000000;
-    text-align: center;
+    position: relative;
     padding: 10px;
     font-size: 24px;
     font-weight: bold;
     color: rgb(255, 0, 234);/*GhoulSpace"*/
     border-bottom: 2px solid blue; /* Blue line below header */
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/*Container for links*/
+.header-links {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.header-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.header-links a:hover {
+    color: rgb(255, 0, 234);
 }
 
 /*Picture of me Styling */
