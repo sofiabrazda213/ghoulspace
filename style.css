@@ -24,7 +24,9 @@ header {
 /*Picture of me Styling */
 
 /* Border Styling */
-.custom-border {
+.secret-message-box {
+    margin: 0 auto;
+    justify-content: center;
     border: 3px dotted rgb(255, 0, 234); /* Dashed pink border */
     padding: 20px;
     width: 300px;
@@ -139,7 +141,7 @@ header {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
