@@ -137,17 +137,17 @@ header {
 }
 
 .tab-button {
-    color: #007bff;
+    color: white;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid #007bff;
-    border-radius: 15px;/*All border radius must have 15px to match*/
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .tab-button:hover {
-    background-color: #f242f5;
-    color: pink;
+    color: #f242f5;
 }
 
 .tabs a:hover {
@@ -168,7 +168,7 @@ header {
     gap: 30px;
     margin: 0 auto;
     margin-bottom: 20px;
-    width: fit-content;
+    width: 100%; /*eniire width*/
     padding: 10px;
     border-bottom: 5px solid blue; /* Blue line below tab bar */
     padding-bottom: 5px; /* Adjust space between buttons and line */
