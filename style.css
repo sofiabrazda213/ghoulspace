@@ -150,13 +150,12 @@ header {
 }
 
 .tabs a:hover {
-    background-color: #b300b3; /* pink on hover */
+    color: #b300b3; /* pink on hover */
 }
 
 .tab-button.active {
     color: #84e42a;
-    /*text-decoration: green wavy underline;*/
-    color: #fff
+    /*color: #fff*/
 }
 
 /* Tab Bar Styling */
@@ -169,7 +168,7 @@ header {
     margin-bottom: 20px;
     width: 100%; /*eniire width*/
     padding: 10px;
-    border-bottom: 5px solid blue; /* Blue line below tab bar */
+    border-bottom: 2px solid blue; /* Blue line below tab bar */
     padding-bottom: 5px; /* Adjust space between buttons and line */
 }
 
