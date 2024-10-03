@@ -17,16 +17,15 @@ header {
     padding: 10px;
     font-size: 24px;
     font-weight: bold;
-    border-top: 5px solid blue; 
     color: rgb(255, 0, 234);/*GhoulSpace"*/
-    border-bottom: 5px solid blue; /* Blue line below header */
+    border-bottom: 2px solid blue; /* Blue line below header */
 }
 
 /*Picture of me Styling */
 
 /* Border Styling */
 .custom-border {
-    border: 5px dotted #ec86b9; /* Dashed pink border */
+    border: 3px dotted rgb(255, 0, 234); /* Dashed pink border */
     padding: 20px;
     width: 300px;
     text-align: center;
@@ -36,7 +35,7 @@ header {
     display: block;
     margin: auto;
     border-radius: 15px;
-    border: 3px solid #ff00ff; /* Bright border for image */
+    border: 2px solid rgb(255, 0, 234); /* Bright border for image */
 }
 
 .container {
@@ -155,8 +154,8 @@ header {
 }
 
 .tab-button.active {
-    background-color: #84e42a;
-    text-decoration: green wavy underline;
+    color: #84e42a;
+    /*text-decoration: green wavy underline;*/
     color: #fff
 }
 
