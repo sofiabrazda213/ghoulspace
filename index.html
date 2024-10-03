@@ -131,12 +131,15 @@
                     }).then(function(response) {
                         if (response.ok) {
                             document.getElementById('success-message').style.display = 'block'; // Show success message
-                            document.getElementById('guestbook-form').reset(); // Clear form fields
+                            document.getElementById('error-message').style.display = 'none'; // Hide error message if it was displayed
+                            form.reset(); // Reset form fields
                         } else {
-                            alert('There was a problem submitting the form. Please try again.');
+                            document.getElementById('error-message').style.display = 'block'; // Show error message
+                            document.getElementById('success-message').style.display = 'none'; // Hide success message
                         }
                     }).catch(function(error) {
-                        alert('There was a problem submitting the form. Please try again.');
+                        document.getElementById('error-message').style.display = 'block'; // Show error message
+                        document.getElementById('success-message').style.display = 'none'; // Hide success message
                     });
                 });
             </script>
