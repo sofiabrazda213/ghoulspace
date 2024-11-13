@@ -101,6 +101,10 @@ header {
     overflow-y: auto; /* Enables scrolling if content overflows */
 }
 
+.Me {
+    font-family: 'Doto', cursive;
+}
+
 .right-pane {
     display: flex;
     background-color: #1a1a1a; /* Dark background but super black */
