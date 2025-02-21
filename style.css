@@ -194,15 +194,22 @@ header {
 /* this is controlling home/art/photos */
 .tab-bar {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
     gap: 30px;
     margin: 0 auto;
     margin-bottom: 20px;
-    width: 100%; /*eniire width*/
-    padding: 10px;
-    border-bottom: 2px solid blue; /* Blue line below tab bar */
+    /* border-bottom: 2px solid blue; Blue line below tab bar */
     padding-bottom: 5px; /* Adjust space between buttons and line */
-}
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    width: 100vh; /*eniire width*/
+    padding: 20px;
+    border-right: 2px solid pink;
+
+    transition: left 0.3s ease-in-out;
 
 .tab-bar::after {
     /*content: '★ ★ ★';*/
