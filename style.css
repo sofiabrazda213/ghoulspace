@@ -210,6 +210,7 @@ header {
     border-right: 2px solid pink;
 
     transition: left 0.3s ease-in-out;
+}
 
 .tab-bar::after {
     /*content: '★ ★ ★';*/
@@ -226,34 +227,6 @@ header {
     padding: 20px;
     border: 1px solid #ccc;
     border-top: none;
-}
-
-.stars {
-    text-align: center; /* Center the stars */
-    margin-top: 10px; /* Add space above the stars */
-    font-size: 12px; /* Adjust the size of the stars */
-    color: #ffffff; /* Set the color of the stars */
-    position: relative; /* Relative positioning for animation */
-    animation: moveStars 5s linear infinite; /*animation over 5 seconds */
-}
-
-@keyframes moveStars {
-
-    0% {
-        transform: translateX(0px); /* Start at original position */
-    }
-    50% {
-        transform: translateX(50px); /* Move 50px to the right */
-    }
-    100% {
-        transform: translateX(0px); /* Back to the original position */
-    }
-    
-}
-
-/* span - adjusts gap */
-.stars span {
-    margin-right: 50px; /* Adjust the spacing between the stars */
 }
 
 .image-box {
