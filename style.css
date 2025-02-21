@@ -163,39 +163,50 @@ header {
 /* this is controlling home/art/photos */
 .tab-bar {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    gap: 30px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    /* border-bottom: 2px solid blue; Blue line below tab bar */
-    padding-bottom: 5px; /* Adjust space between buttons and line */
+    flex-direction: column; /* Stack items vertically */
     position: fixed;
     top: 0;
-    left: -200px;
+    left: -250px; /* Hide off-screen */
     width: 200px;
-    width: 100vh; /*eniire width*/
+    height: 100vh;
+    background: black;
     padding: 20px;
     border-right: 2px solid pink;
-
     transition: left 0.3s ease-in-out;
 }
 
 .tab-bar.show {
-    left: 0; /* Moves it into view */
+    left: 0; /* Moves sidebar into view */
 }
 
 .tab-bar a {
+    display: block; /* Make each link take up full width */
+    width: 100%; /* Ensure full width inside tab bar */
+    padding: 15px;
+    margin: 10px 0; /* Adds spacing between buttons */
+    background: #222; /* Background for each tab */
+    text-align: center;
     color: white;
     text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
-    display: block; /* Make full width clickable */
-    text-align: left;
+    border: 2px solid pink; /* Gives each tab a boxed appearance */
+    border-radius: 10px; /* Rounded corners for a nice look */
 }
 
 .tab-bar a:hover {
-    background: #333;
+    background: #444;
+}
+
+/* Button to toggle sidebar */
+#toggleBtn {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    background: pink;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .image-box {
