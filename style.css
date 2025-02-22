@@ -164,15 +164,15 @@ header {
 .tab-bar {
     position: fixed;
     top: 0;
-    left: -25vw; /* Hidden off-screen */
-    width: 25vw; /* 25% of viewport width */
+    left: -25vw; /* Initially hidden */
+    width: 25vw; /* 25% of the viewport width */
     height: 100vh;
     background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 60px; /* Make space for toggle button */
+    padding-top: 60px; /* Space for toggle button */
     border-right: 3px solid pink;
     transition: left 0.4s ease-in-out;
 }
@@ -217,12 +217,17 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: left 0.3s;
 }
 
 /* Move button inside sidebar when open */
 .tab-bar.show #toggleBtn {
     left: calc(25vw - 50px); /* Adjust button to stay inside sidebar */
+}
+
+/* Keep button visible even when sidebar is hidden */
+#toggleBtn:hover {
+    left: 0;
 }
 
 /* Hover to Show Sidebar */
