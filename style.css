@@ -162,17 +162,18 @@ header {
 /* Tab Bar Styling */
 /* this is controlling home/art/photos */
 .tab-bar {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
     position: fixed;
     top: 0;
-    left: -250px; /* Hide off-screen */
-    width: 200px;
-    height: 100vh;
-    background: black;
-    padding: 20px;
-    border-right: 2px solid pink;
-    transition: left 0.3s ease-in-out;
+    left: 0; /* Make it fully visible */
+    width: 25vw; /* 25% of the viewport width */
+    height: 100vh; /* Full height of the screen */
+    background: black; /* Black sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items inside */
+    justify-content: flex-start;
+    padding-top: 20px; /* Add space at the top */
+    border-right: 3px solid pink; /* Optional border */
 }
 
 .tab-bar.show {
@@ -180,16 +181,18 @@ header {
 }
 
 .tab-bar a {
-    display: block; /* Make each link take up full width */
-    width: 100%; /* Ensure full width inside tab bar */
+    display: flex; /* Makes the entire link area clickable */
+    align-items: center;
+    justify-content: left;
+    width: 90%; /* Almost full width */
     padding: 15px;
-    margin: 10px 0; /* Adds spacing between buttons */
-    background: #222; /* Background for each tab */
-    text-align: center;
+    margin: 10px 0;
+    background: #222; /* Button background */
     color: white;
     text-decoration: none;
-    border: 2px solid pink; /* Gives each tab a boxed appearance */
-    border-radius: 10px; /* Rounded corners for a nice look */
+    font-size: 18px;
+    border: 2px solid pink;
+    border-radius: 10px;
 }
 
 .tab-bar a:hover {
