@@ -1,3 +1,16 @@
+document.getElementById("toggleBtn").addEventListener("click", function () {
+  let sidebar = document.getElementById("sidebar");
+  let button = document.getElementById("toggleBtn");
+
+  if (sidebar.classList.contains("show")) {
+      sidebar.classList.remove("show");
+      button.innerHTML = "☰"; // Show menu icon when closed
+  } else {
+      sidebar.classList.add("show");
+      button.innerHTML = "✖"; // Show X when open
+  }
+});
+
 function openTab(event, tabName) {
     var i, tabContent, tabButton;
     
@@ -75,4 +88,6 @@ async function submitMessage(event) {
     alert("Error submitting message: " + error);
   });
 }
+
+
 
