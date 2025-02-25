@@ -203,7 +203,7 @@ header {
 /* Button to toggle sidebar */
 #toggleBtn {
     position: fixed;
-    top: 10px;
+    top: 20px;
     left: 10px;
     width: 40px;
     height: 40px;
