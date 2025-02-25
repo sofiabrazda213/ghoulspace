@@ -173,7 +173,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     padding-top: 60px; /* Space for toggle button */
-    border-right: 3px solid pink;
+    border-right: 2px solid rgb(255, 0, 234);
     transition: left 0.4s ease-in-out;
 }
 
@@ -192,7 +192,7 @@ header {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    border: 2px solid pink;
+    border: 2px solid rgb(255, 0, 234);
     border-radius: 10px;
 }
 
@@ -207,7 +207,7 @@ header {
     left: 10px;
     width: 40px;
     height: 40px;
-    background: pink;
+    background: rgb(255, 0, 234);
     color: black;
     border: none;
     font-size: 20px;
