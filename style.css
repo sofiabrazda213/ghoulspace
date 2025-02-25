@@ -183,22 +183,21 @@ header {
 }
 
 .tab-bar a {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    width: 90%;
-    padding: 15px;
-    margin: 10px 0;
-    background: #222;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border: 2px solid rgb(229, 255, 0);
-    border-radius: 10px;
+    display: block; /* Ensure each link is on its own line */
+    text-align: center; /* Center the text */
+    width: 100%; /* Make it span the full width */
+    padding: 20px 0; /* Increase padding for better spacing */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    font-size: 24px; /* Increase font size */
+    color: white; /* Keep the text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make it stand out */
 }
 
 .tab-bar a:hover {
-    background: #444;
+    color: rgb(255, 0, 234); /* Change text color on hover */
+    background: none;
 }
 
 /* Button to toggle sidebar */
