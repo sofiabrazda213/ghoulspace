@@ -178,7 +178,7 @@ header {
 }
 
 .tab-bar.show {
-    left: 0; /* Moves sidebar into view */
+    left: 0 !important; /* !imp ensures no other styles override left: 0.*/
 }
 
 .tab-bar a {
@@ -231,8 +231,8 @@ header {
 }
 
 /* Hover to Show Sidebar */
-#toggleBtn:hover + .tab-bar {
-    left: 0;
+#sidebar:hover {
+    left: 0 !important;
 }
 
 .image-box {
