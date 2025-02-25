@@ -289,73 +289,59 @@ form input[type="submit"]:hover {
     color: #ffffff;
 }
 
-/* Gallery Styling */
+/* Photo grid Gallery Styling */
 .gallery {
-    display: flex;
-    justify-content: center; /* Center the gallery */
-    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid */
     gap: 10px;
     padding: 20px;
+    justify-content: center; /* Center the grid */
 }
 
+/* Images inside the Gallery */
 .gallery img {
-    width: 200px;
+    width: 100%; /* Each image takes full width of its grid cell */
     height: auto;
     border: 2px solid #333;
     border-radius: 8px;
+    cursor: pointer; /* Make it clickable */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Carousel container for setting width */
+.gallery img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
 
-.carousel-container {
-    width: 100%; /* Adjust to fit your layout */
-    overflow-x: auto; /* Allow horizontal scroll */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto; /* Center the carousel */
-    border-radius: 12px;
-  }
-  
-  /* Carousel styling */
-  .carousel {
-    display: flex;
-    flex-wrap: wrap; /* Allow images to wrap to a new row */
-    justify-content: center;
-  }
-  
-  .carousel img {
-    margin: 0 10px; /* Space between images */
-    border-radius: 10px;
-    height: auto;
-    width: 300px; /* Set a uniform width for the images */
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carousel img:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
-  }
-
-  /* Modal styling */
+/* Modal Styling */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
-    z-index: 1000; /* Bring it in front of other elements */
-    padding-top: 60px;
-    left: 0;
+    z-index: 1000; /* Bring it in front */
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
-  }
-  
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-  }
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
   
   #caption {
     margin: auto;
@@ -363,20 +349,5 @@ form input[type="submit"]:hover {
     text-align: center;
     color: #ccc;
     padding: 10px 0;
-  }
-  
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #f1f1f1;
   }
   
