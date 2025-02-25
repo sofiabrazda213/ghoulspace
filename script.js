@@ -25,7 +25,7 @@ function openModal(imgElement) {
 
   fullImage.src = imgElement.src;
   captionText.innerHTML = imgElement.alt; // Set image caption
-  modal.style.display = "block"; // Fix here!
+  modal.style.display = "block";
 
   // Close modal if user clicks outside the image
   modal.addEventListener("click", function (event) {
