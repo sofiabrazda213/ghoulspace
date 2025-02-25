@@ -218,6 +218,14 @@ header {
     justify-content: center;
     border-radius: 5px;
     transition: left 0.3s;
+    z-index: 1000;
+}
+
+/* Ensure the Sidebar Works on Mobile */
+@media screen and (max-width: 768px) {
+    .tab-bar {
+        width: 60%; /* Make sidebar responsive */
+    }
 }
 
 /* Move button inside sidebar when open */
