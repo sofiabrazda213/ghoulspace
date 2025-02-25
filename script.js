@@ -12,20 +12,42 @@ document.getElementById("toggleBtn").addEventListener("click", function () {
   }
 });
 
-// Gallery modul
+// Gallery modal
 function openModal(imgElement) {
   let modal = document.getElementById("imageModal");
   let fullImage = document.getElementById("fullImage");
   let captionText = document.getElementById("caption");
 
+  if (!modal || !fullImage || !captionText) {
+      console.error("Modal elements not found!");
+      return;
+  }
+
   fullImage.src = imgElement.src;
   captionText.innerHTML = imgElement.alt; // Set image caption
-  modal.style.display = "flex";
+  modal.style.display = "block"; // Fix here!
+
+  // Close modal if user clicks outside the image
+  modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+          closeModal();
+      }
+  });
 }
 
 function closeModal() {
-  document.getElementById("imageModal").style.display = "none";
+  let modal = document.getElementById("imageModal");
+  if (!modal) {
+      console.error("Modal not found!");
+      return;
+  }
+  modal.style.display = "none";
 }
+
+// Ensure Close Button Works
+document.querySelector(".close").addEventListener("click", function () {
+  closeModal();
+});
 
 
 // Firebase (database) configuration
