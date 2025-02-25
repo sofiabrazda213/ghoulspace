@@ -34,7 +34,8 @@ header {
 /*Container for links*/
 .header-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    padding-left: 30px;
 }
 
 .header-links a {
