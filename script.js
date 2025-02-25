@@ -49,6 +49,14 @@ document.querySelector(".close").addEventListener("click", function () {
   closeModal();
 });
 
+// Ensure the modal is hidden when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+  let modal = document.getElementById("imageModal");
+  if (modal) {
+      modal.style.display = "none"; // Force hide the modal
+  }
+});
+
 
 // Firebase (database) configuration
 const firebaseConfig = {
