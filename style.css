@@ -86,13 +86,31 @@ header {
     /*overflow-y: auto;
     flex-shrink: 0; /* Prevents the panes from shrinking smaller than their width */
     width: 50%;
-    height: 100%;
+    height: 100vh; /* or %? */
     padding: 20px;
     border: 2px solid rgb(255, 0, 234);
     border-radius: 15px; /*makes round*/
     box-sizing: border-box;
     overflow-y: auto;
+    overflow: auto;
     /*margin: 10px;*/
+}
+
+/* Mobile: Stack Panes Vertically & Allow Horizontal Scroll */
+@media (max-width: 768px) { 
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack panes on top of each other */
+    }
+
+    .left-pane, .right-pane {
+        width: 100%; /* Take full width */
+        height: 100vh; /* Full viewport height */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent line breaks */
+        display: flex;
+        flex-wrap: nowrap;
+    }
 }
 
 .left-pane {
