@@ -20,7 +20,7 @@ header {
     font-size: 24px;
     font-weight: bold;
     color: rgb(255, 0, 234);/*GhoulSpace"*/
-    border-bottom: 2px solid blue; /* Blue line below header */
+    /* border-bottom: 2px solid blue; Blue line below header */
     position: relative;
 }
 
