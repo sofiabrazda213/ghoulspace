@@ -1,15 +1,25 @@
-//Side nav/bar on left side
-document.getElementById("toggleBtn").addEventListener("click", function () {
-  let sidebar = document.getElementById("sidebar");
+document.addEventListener("DOMContentLoaded", function () {
+  let sidebar = document.querySelector(".tab-bar"); // Use ".tab-bar" instead of "#sidebar"
   let button = document.getElementById("toggleBtn");
 
-  if (sidebar.classList.contains("show")) {
-      sidebar.classList.remove("show");
-      button.innerHTML = "☰"; // Show menu icon when closed
-  } else {
-      sidebar.classList.add("show");
-      button.innerHTML = "✖"; // Show X when open
-  }
+  button.addEventListener("click", function (event) {
+      event.stopPropagation(); // Prevent click conflicts
+      sidebar.classList.toggle("show");
+
+      if (sidebar.classList.contains("show")) {
+          button.innerHTML = "✖"; // Show 'X' when open
+      } else {
+          button.innerHTML = "☰"; // Show ☰ when closed
+      }
+  });
+
+  // Close sidebar when clicking outside (mobile fix)
+  document.addEventListener("click", function (event) {
+      if (!sidebar.contains(event.target) && !button.contains(event.target)) {
+          sidebar.classList.remove("show");
+          button.innerHTML = "☰";
+      }
+  });
 });
 
 // Gallery modal
