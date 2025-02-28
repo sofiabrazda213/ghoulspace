@@ -90,11 +90,20 @@ header {
     justify-content: space between;
     align-items: flex-start; /* Align items to the top */
     gap: 20px;
-    width: 100%;
-    height: 100vh; /* Ensure it takes full width of the page wass 100% now calc */
+    width: 200vw; /* used to be 100% */
+    height: 200vh; /* Ensure it takes full width of the page wass 100% now calc */
     /* padding: 20px; /* Add some padding around the container */
     box-sizing: border-box;
-    overflow: hidden; /* should prevent horizantal scrolling */
+    overflow: auto; /* should prevent horizantal scrolling */
+    position: relative;
+}
+
+.scroll-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows content to go in multiple rows */
+    width: 200vw; /* Wider than the viewport */
+    height: 200vh; /* Taller than the viewport */
+    overflow: auto; /* Enables scrolling in all directions */
 }
 
 .left-pane, .right-pane {
@@ -102,6 +111,7 @@ header {
     flex-grow: 1; /* Prevents the panes from growing automatically */
     /*overflow-y: auto;
     flex-shrink: 0; /* Prevents the panes from shrinking smaller than their width */
+    flex: 1 1 50vw; /* Each pane takes half of the screen */
     width: 50%;
     height: 100vh; /* or %? */
     padding: 20px;
