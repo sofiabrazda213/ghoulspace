@@ -353,6 +353,22 @@ form input[type="submit"]:hover {
     color: #ffffff;
 }
 
+/* shop pics Styling */
+.shop-pics {
+    display: flex;
+    flex-direction: column; /* Stacks photos vertically */
+    align-items: center; /* Centers them horizontally */
+    justify-content: center; /* Centers them inside the container */
+    gap: 10px; /* Adds space between each photo */
+    width: 100%; /* Ensures it takes full width */
+}
+
+.shop-pics img {
+    width: auto; /* Keeps original size */
+    max-width: 90%; /* Ensures it doesn’t exceed container width */
+    height: auto; /* Maintains aspect ratio */
+}
+
 /* Photo grid Gallery Styling */
 .gallery {
     display: grid;
