@@ -90,7 +90,7 @@ header {
     justify-content: space between;
     align-items: flex-start; /* Align items to the top */
     gap: 20px;
-    width: 200vw; /* used to be 100% */
+    width: 100%; /* used to be 100% */
     height: 200vh; /* Ensure it takes full width of the page wass 100% now calc */
     /* padding: 20px; /* Add some padding around the container */
     box-sizing: border-box;
