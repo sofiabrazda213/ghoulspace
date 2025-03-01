@@ -100,10 +100,11 @@ header {
 
 .scroll-container {
     display: flex;
-    flex-wrap: wrap; /* Allows content to go in multiple rows */
-    width: 200vw; /* Wider than the viewport */
-    height: 200vh; /* Taller than the viewport */
-    overflow: auto; /* Enables scrolling in all directions */
+    flex-wrap: no-wrap; /* Allows content to go in multiple rows */
+    width: 100vw; /* Wider than the viewport */
+    height: 100vh; /* Taller than the viewport */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-y: auto; /* Allows only vertical scrolling */
 }
 
 .left-pane, .right-pane {
@@ -111,8 +112,8 @@ header {
     flex-grow: 1; /* Prevents the panes from growing automatically */
     /*overflow-y: auto;
     flex-shrink: 0; /* Prevents the panes from shrinking smaller than their width */
-    flex: 1 1 50vw; /* Each pane takes half of the screen */
-    width: 50%;
+    flex: 1; /* Each pane takes half of the screen */
+    width: 50vh;
     height: 100vh; /* or %? */
     padding: 20px;
     border: 2px solid rgb(255, 0, 234);
