@@ -361,6 +361,8 @@ form input[type="submit"]:hover {
     justify-content: center; /* Centers them inside the container */
     gap: 10px; /* Adds space between each photo */
     width: 60%; /* Ensures it takes full width */
+    margin: 0 auto; /* Centers the whole group on the page */
+    text-align: center; /* Ensures alignment */
 }
 
 .shop-pics img {
