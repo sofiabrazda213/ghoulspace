@@ -131,7 +131,7 @@ header {
     }
 
     .left-pane, .right-pane {
-        width: 100%; /* Take full width */
+        width: 50%; /* Take full width */
         height: 100vh; /* Full viewport height */
         overflow-x: auto; /* Enable horizontal scrolling */
         white-space: nowrap; /* Prevent line breaks */
