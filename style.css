@@ -360,12 +360,12 @@ form input[type="submit"]:hover {
     align-items: center; /* Centers them horizontally */
     justify-content: center; /* Centers them inside the container */
     gap: 10px; /* Adds space between each photo */
-    width: 100%; /* Ensures it takes full width */
+    width: 60%; /* Ensures it takes full width */
 }
 
 .shop-pics img {
     width: auto; /* Keeps original size */
-    max-width: 90%; /* Ensures it doesn’t exceed container width */
+    max-width: 50%; /* Ensures it doesn’t exceed container width */
     height: auto; /* Maintains aspect ratio */
 }
 
