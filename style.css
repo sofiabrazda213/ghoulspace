@@ -145,6 +145,8 @@ header {
     background-color: #000000; /* Black background */
     /*padding: 20px;
     overflow-y: auto; /* Enables scrolling if content overflows */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 .Me {
