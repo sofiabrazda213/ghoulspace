@@ -464,6 +464,43 @@ form input[type="submit"]:hover {
     transition: transform 0.5s ease-out; /* Smooth drop effect */
 }
 
+.artimages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between images */
+}
+
+.image-container {
+    position: absolute; /* Ensures free movement */
+    display: flex;
+    flex-direction: column; /* Stacks image and caption */
+    align-items: center; /* Centers the caption */
+    border: 2px solid pink; /* Thin pink border */
+    background: black; /* Matches aesthetic */
+    padding: 5px; /* Adds some spacing inside */
+}
+
+.image-container img {
+    width: 200px; /* Makes images square */
+    height: 200px; /* Ensures square shape */
+    object-fit: cover; /* Crops to fit square */
+    cursor: grab;
+    user-select: none;
+}
+
+.image-container:active img {
+    cursor: grabbing;
+    transform: scale(1.05); /* Slight zoom while dragging */
+}
+
+.caption {
+    margin-top: 5px; /* Space between image and caption */
+    font-size: 14px;
+    color: pink; /* Matches border */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
 /* This will ensure images appear at different places initially */
 .artimages img:nth-child(1) { top: 50px; left: 50px; }
 .artimages img:nth-child(2) { top: 200px; left: 300px; }
