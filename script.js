@@ -108,15 +108,15 @@ async function submitMessage(event) {
 
 //js for art gal
 document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.querySelector(".artgallery");
-  if (!gallery) return;
-
   const images = document.querySelectorAll(".draggable");
 
   images.forEach((img) => {
       img.style.position = "absolute";
       img.style.left = `${Math.random() * (window.innerWidth - 200)}px`;
       img.style.top = `${Math.random() * (window.innerHeight - 200)}px`;
+
+      // Apply floating animation
+      img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`;
 
       img.addEventListener("pointerdown", startDrag);
   });
@@ -128,7 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let shiftX = event.clientX - img.getBoundingClientRect().left;
       let shiftY = event.clientY - img.getBoundingClientRect().top;
 
-      img.style.transition = "none"; // Remove transition while dragging
+      img.style.transition = "none"; // Remove transition during drag
+      img.style.animation = "none"; // Stop floating effect
 
       function moveAt(pageX, pageY) {
           img.style.left = `${pageX - shiftX}px`;
@@ -143,9 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.addEventListener("pointerup", () => {
           document.removeEventListener("pointermove", onPointerMove);
-          img.style.transition = "transform 0.3s ease-out"; // Smooth drop
+          img.style.transition = "transform 0.5s ease-out"; // Smooth drop effect
+          img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`; // Resume floating
       }, { once: true });
 
-      img.ondragstart = () => false; // Prevent default drag
+      img.ondragstart = () => false; // Prevents default drag
   }
 });

@@ -441,6 +441,11 @@ form input[type="submit"]:hover {
 }
 
 /* Art Gallery Styling */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(10px); }
+}
+
 .artgallery {
     position: relative;
     width: 100vw;
@@ -455,7 +460,8 @@ form input[type="submit"]:hover {
     position: absolute;
     cursor: grab;
     user-select: none;
-    transition: transform 0.3s ease-out;
+    animation: float 3s infinite ease-in-out alternate; /* Floating effect */
+    transition: transform 0.5s ease-out; /* Smooth drop effect */
 }
 
 /* This will ensure images appear at different places initially */
@@ -465,5 +471,5 @@ form input[type="submit"]:hover {
 
 .artimages img:active {
     cursor: grabbing;
-    transform: scale(1.1); /* Slight zoom while dragging */
+    transform: scale(1.05); /* Slight zoom while dragging */
 }
