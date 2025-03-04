@@ -112,10 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   images.forEach((img) => {
       img.style.position = "absolute";
-      img.style.left = `${Math.random() * (window.innerWidth - 200)}px`;
-      img.style.top = `${Math.random() * (window.innerHeight - 200)}px`;
 
-      // Apply floating animation
+      let startX = Math.random() * (window.innerWidth - 200);
+      let startY = Math.random() * (window.innerHeight - 200);
+      
+      img.style.left = `${startX}px`;
+      img.style.top = `${startY}px`;
+      img.dataset.x = startX; // Store position for transforms
+      img.dataset.y = startY;
+
       img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`;
 
       img.addEventListener("pointerdown", startDrag);
@@ -125,15 +130,19 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       const img = event.target;
-      let shiftX = event.clientX - img.getBoundingClientRect().left;
-      let shiftY = event.clientY - img.getBoundingClientRect().top;
+      let shiftX = event.clientX - parseFloat(img.dataset.x);
+      let shiftY = event.clientY - parseFloat(img.dataset.y);
 
-      img.style.transition = "none"; // Remove transition during drag
-      img.style.animation = "none"; // Stop floating effect
+      img.style.transition = "none"; // Remove transition while dragging
+      img.style.animation = "none"; // Stop floating
 
       function moveAt(pageX, pageY) {
-          img.style.left = `${pageX - shiftX}px`;
-          img.style.top = `${pageY - shiftY}px`;
+          let newX = pageX - shiftX;
+          let newY = pageY - shiftY;
+
+          img.dataset.x = newX;
+          img.dataset.y = newY;
+          img.style.transform = `translate(${newX}px, ${newY}px)`; // Smooth movement
       }
 
       function onPointerMove(event) {
@@ -148,6 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
           img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`; // Resume floating
       }, { once: true });
 
-      img.ondragstart = () => false; // Prevents default drag
+      img.ondragstart = () => false; // Prevent default drag
   }
 });
