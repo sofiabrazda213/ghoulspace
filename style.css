@@ -33,7 +33,7 @@ header {
 
 .animated-bow {
     position: absolute; /* Ensures it floats over other elements */
-    top: 10px; /* Adjust this value to move it down slightly */
+    top: 20px; /* Adjust this value to move it down slightly */
     left: 50%; /* Move it to the center */
     transform: translateX(-50%); /* Perfect centering */
     z-index: 100; /* Ensures it stays on top of other elements */
@@ -42,8 +42,8 @@ header {
 .animated-clickme {
     transform: rotate(-30deg) scale(0.8) !important; /* Adjust the angle as needed */
     position: absolute;
-    top: 200px;   /* Move down from the top */
-    left: 50px;  /* Move right from the left */
+    top: 125px;   /* Move down from the top */
+    left: 70px;  /* Move right from the left */
 }
 
 
