@@ -386,6 +386,28 @@ form input[type="submit"]:hover {
     height: auto; /* Maintains aspect ratio */
 }
 
+.shop-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white; /* White text */
+    background-color: black; /* Black button */
+    border: 2px solid #ff00ff; /* Pink outline */
+    border-radius: 8px; /* Rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.shop-button:hover {
+    background-color: #ff00ff; /* Pink background on hover */
+    color: black; /* Black text on hover */
+    border-color: black; /* Black outline on hover */
+}
+
+
 /* Photo Gallery Styling */
 .gallery img {
     width: 100%; /* Each image takes full width of its grid cell */
