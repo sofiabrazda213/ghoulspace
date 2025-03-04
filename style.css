@@ -387,7 +387,7 @@ form input[type="submit"]:hover {
 
 /* Images inside the Gallery */
 .gallery img {
-    width: 100%; /* Each image takes full width of its grid cell */
+    max-width: 100%; /* Each image takes full width of its grid cell */
     height: auto;
     border: 2px solid #333;
     border-radius: 8px;
@@ -404,10 +404,6 @@ form input[type="submit"]:hover {
 
 .artimages img:active {
     cursor: grabbing;
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Modal Styling */

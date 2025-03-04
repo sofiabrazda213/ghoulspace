@@ -121,6 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function dragStart(event) {
       event.preventDefault();
       let img = event.target;
+
+      // Ensure the image has position absolute and initial values
+      img.style.position = "absolute";
+      if (!img.style.left) img.style.left = img.offsetLeft + "px";
+      if (!img.style.top) img.style.top = img.offsetTop + "px";
+    
       let shiftX = event.clientX - img.getBoundingClientRect().left;
       let shiftY = event.clientY - img.getBoundingClientRect().top;
 
