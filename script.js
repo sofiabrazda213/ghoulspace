@@ -106,5 +106,42 @@ async function submitMessage(event) {
   });
 }
 
+//js for art gal
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".gallery"); // Check if gallery exists
+  if (!gallery) return; // Exit if not on the Art Gallery page
+
+  const images = document.querySelectorAll(".draggable");
+
+  images.forEach(img => {
+      img.addEventListener("mousedown", dragStart);
+      img.addEventListener("touchstart", dragStart); // Mobile support
+  });
+
+  function dragStart(event) {
+      event.preventDefault();
+      let img = event.target;
+      let shiftX = event.clientX - img.getBoundingClientRect().left;
+      let shiftY = event.clientY - img.getBoundingClientRect().top;
+
+      function moveAt(pageX, pageY) {
+          img.style.left = pageX - shiftX + "px";
+          img.style.top = pageY - shiftY + "px";
+      }
+
+      function onMouseMove(event) {
+          moveAt(event.pageX, event.pageY);
+      }
+
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseup", () => {
+          document.removeEventListener("mousemove", onMouseMove);
+      }, { once: true });
+
+      img.ondragstart = () => false;
+  }
+});
+
+
 
 
