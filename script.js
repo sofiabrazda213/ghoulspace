@@ -110,60 +110,54 @@ async function submitMessage(event) {
 document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".image-container");
 
-  images.forEach((img) => {
-      img.style.position = "absolute"; // Ensure absolute positioning
+  images.forEach(img => {
+      // Ensure images are placed randomly within the viewport
+      let startX = Math.random() * (window.innerWidth - 220); // Account for image width
+      let startY = Math.random() * (window.innerHeight - 250); // Account for image height
 
-      // Ensure all images are randomly placed and **not overlapping**
-      let startX = Math.random() * (window.innerWidth - 250);
-      let startY = Math.random() * (window.innerHeight - 250);
-
+      img.style.position = "absolute";
       img.style.left = `${startX}px`;
       img.style.top = `${startY}px`;
 
-      // Store position data
       img.dataset.x = startX;
       img.dataset.y = startY;
 
-      // Floating effect
-      img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random()}s`;
-
-      // Enable dragging
+      // Add drag functionality
       img.addEventListener("pointerdown", startDrag);
   });
-
-  function startDrag(event) {
-      event.preventDefault();
-      const img = event.target.closest(".image-container");
-
-      let shiftX = event.clientX - img.getBoundingClientRect().left;
-      let shiftY = event.clientY - img.getBoundingClientRect().top;
-
-      img.style.transition = "none"; // Remove transition while dragging
-      img.style.animation = "none"; // Stop floating
-      img.style.cursor = "grabbing";
-
-      function moveAt(pageX, pageY) {
-          let newX = pageX - shiftX;
-          let newY = pageY - shiftY;
-
-          img.style.left = `${newX}px`;
-          img.style.top = `${newY}px`;
-
-          img.dataset.x = newX;
-          img.dataset.y = newY;
-      }
-
-      function onPointerMove(event) {
-          moveAt(event.clientX, event.clientY);
-      }
-
-      document.addEventListener("pointermove", onPointerMove);
-
-      document.addEventListener("pointerup", () => {
-          document.removeEventListener("pointermove", onPointerMove);
-          img.style.transition = "transform 0.3s ease-out"; // Smooth drop
-          img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random()}s`; // Resume floating
-          img.style.cursor = "grab";
-      }, { once: true });
-  }
 });
+
+function startDrag(event) {
+  event.preventDefault();
+
+  const img = event.target.closest(".image-container");
+  let shiftX = event.clientX - img.getBoundingClientRect().left;
+  let shiftY = event.clientY - img.getBoundingClientRect().top;
+
+  img.style.transition = "none"; // Disable smooth effect while dragging
+  img.style.cursor = "grabbing";
+
+  function moveAt(pageX, pageY) {
+      let newX = pageX - shiftX;
+      let newY = pageY - shiftY;
+
+      img.dataset.x = newX;
+      img.dataset.y = newY;
+      img.style.left = `${newX}px`;
+      img.style.top = `${newY}px`;
+  }
+
+  function onPointerMove(event) {
+      moveAt(event.clientX, event.clientY);
+  }
+
+  document.addEventListener("pointermove", onPointerMove);
+
+  document.addEventListener("pointerup", () => {
+      document.removeEventListener("pointermove", onPointerMove);
+      img.style.transition = "transform 0.3s ease-out"; // Smooth drop effect
+      img.style.cursor = "grab";
+  }, { once: true });
+
+  img.ondragstart = () => false; // Prevent default dragging behavior
+}
