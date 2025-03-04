@@ -113,36 +113,44 @@ document.addEventListener("DOMContentLoaded", () => {
   images.forEach((img) => {
       img.style.position = "absolute";
 
-      let startX = Math.random() * (window.innerWidth - 200);
-      let startY = Math.random() * (window.innerHeight - 200);
+      // Randomly place images within the window boundaries
+      let startX = Math.random() * (window.innerWidth - 250);
+      let startY = Math.random() * (window.innerHeight - 250);
 
-      img.style.transform = `translate(${startX}px, ${startY}px)`;
+      img.style.left = `${startX}px`;
+      img.style.top = `${startY}px`;
+
+      // Store the initial position
       img.dataset.x = startX;
       img.dataset.y = startY;
 
-      img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`;
+      // Add floating effect
+      img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random()}s`;
 
+      // Enable dragging
       img.addEventListener("pointerdown", startDrag);
   });
 
   function startDrag(event) {
       event.preventDefault();
+      const img = event.target.closest(".draggable");
 
-      const img = event.target;
-      let shiftX = event.clientX - img.dataset.x;
-      let shiftY = event.clientY - img.dataset.y;
+      let shiftX = event.clientX - img.getBoundingClientRect().left;
+      let shiftY = event.clientY - img.getBoundingClientRect().top;
 
-      img.style.transition = "none"; // Remove transition while dragging
-      img.style.animation = "none"; // Stop floating
-      img.style.cursor = "grabbing"; // Change cursor to grabbing
+      img.style.transition = "none"; // Remove smooth transitions while dragging
+      img.style.animation = "none"; // Stop floating effect
+      img.style.cursor = "grabbing";
 
       function moveAt(pageX, pageY) {
           let newX = pageX - shiftX;
           let newY = pageY - shiftY;
 
+          img.style.left = `${newX}px`;
+          img.style.top = `${newY}px`;
+
           img.dataset.x = newX;
           img.dataset.y = newY;
-          img.style.transform = `translate(${newX}px, ${newY}px)`; // Moves smoothly
       }
 
       function onPointerMove(event) {
@@ -153,11 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.addEventListener("pointerup", () => {
           document.removeEventListener("pointermove", onPointerMove);
-          img.style.transition = "transform 0.5s ease-out"; // Smooth drop effect
-          img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`; // Resume floating
-          img.style.cursor = "move"; // Change cursor back
+          img.style.transition = "transform 0.3s ease-out"; // Smooth drop effect
+          img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random()}s`; // Resume floating
+          img.style.cursor = "grab";
       }, { once: true });
-
-      img.ondragstart = () => false; // Prevent default drag
   }
 });
