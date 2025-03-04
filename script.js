@@ -109,64 +109,43 @@ async function submitMessage(event) {
 //js for art gal
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector(".artgallery");
-  if (!gallery) return; // Ensure script runs only on the Art Gallery page
+  if (!gallery) return; // Ensure script runs only on Art Gallery page
 
   const images = document.querySelectorAll(".draggable");
 
   images.forEach((img, index) => {
-      // Ensure images have a default position so they don’t stack in one place
       img.style.position = "absolute";
+      
+      // Randomize initial placement
+      img.style.left = `${Math.random() * (window.innerWidth - 200)}px`;
+      img.style.top = `${Math.random() * (window.innerHeight - 200)}px`;
 
-      if (!img.style.left) img.style.left = `${50 + index * 150}px`; // Spread out images horizontally
-      if (!img.style.top) img.style.top = `${50 + index * 100}px`; // Spread out images vertically
-
-      // Add event listeners for both mouse and touch interactions
-      img.addEventListener("mousedown", startDrag);
-      img.addEventListener("touchstart", startDrag, { passive: false });
+      img.addEventListener("pointerdown", startDrag);
   });
 
   function startDrag(event) {
-      event.preventDefault(); // Prevent default behavior
+      event.preventDefault();
+      const img = event.target;
+      let shiftX = event.clientX - img.getBoundingClientRect().left;
+      let shiftY = event.clientY - img.getBoundingClientRect().top;
 
-      let img = event.target;
-      let shiftX, shiftY;
-
-      if (event.type === "touchstart") {
-          shiftX = event.touches[0].clientX - img.getBoundingClientRect().left;
-          shiftY = event.touches[0].clientY - img.getBoundingClientRect().top;
-      } else {
-          shiftX = event.clientX - img.getBoundingClientRect().left;
-          shiftY = event.clientY - img.getBoundingClientRect().top;
-      }
+      img.style.transition = "none"; // Disable transitions during drag
 
       function moveAt(pageX, pageY) {
-          img.style.left = pageX - shiftX + "px";
-          img.style.top = pageY - shiftY + "px";
+          img.style.left = `${pageX - shiftX}px`;
+          img.style.top = `${pageY - shiftY}px`;
       }
 
-      function onMouseMove(event) {
-          let pageX = event.type.includes("touch") ? event.touches[0].pageX : event.pageX;
-          let pageY = event.type.includes("touch") ? event.touches[0].pageY : event.pageY;
-          moveAt(pageX, pageY);
+      function onPointerMove(event) {
+          moveAt(event.clientX, event.clientY);
       }
 
-      document.addEventListener("mousemove", onMouseMove);
-      document.addEventListener("touchmove", onMouseMove, { passive: false });
+      document.addEventListener("pointermove", onPointerMove);
+      document.addEventListener("pointerup", () => {
+          document.removeEventListener("pointermove", onPointerMove);
+          img.style.transition = "transform 0.3s ease-out"; // Add smooth drop effect
+      }, { once: true });
 
-      function stopDrag() {
-          document.removeEventListener("mousemove", onMouseMove);
-          document.removeEventListener("touchmove", onMouseMove);
-      }
-
-      document.addEventListener("mouseup", stopDrag, { once: true });
-      document.addEventListener("touchend", stopDrag, { once: true });
-
-      img.ondragstart = () => false; // Disable default drag behavior
+      img.ondragstart = () => false; // Prevents default drag behavior
   }
 });
-
-
-
-
-
-

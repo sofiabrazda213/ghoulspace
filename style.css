@@ -443,20 +443,22 @@ form input[type="submit"]:hover {
 /* Art Gallery Styling */
 .artgallery {
     position: relative;
-    width: 100%;
-    height: 1000px;
-    border: 2px dashed #ccc;
+    width: 100vw;
+    height: 100vh;
+    background: black; /* Match aesthetic */
     overflow: hidden;
 }
 
 .artimages img {
-    width: 120px;  /* Set a fixed size for draggable images */
+    width: 200px; /* Scale images for better look */
     height: auto;
-    position: absolute;  /* Allow images to move freely */
+    position: absolute; /* Allows free movement */
     cursor: grab;
-    transition: transform 0.2s ease-in-out;
+    user-select: none;
+    transition: transform 0.3s ease-in-out; /* Smooth effect when dropped */
 }
 
 .artimages img:active {
     cursor: grabbing;
+    transform: scale(1.05); /* Slight zoom while dragging */
 }
