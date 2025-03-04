@@ -465,7 +465,7 @@ form input[type="submit"]:hover {
     display: flex;
     flex-direction: column; /* Stacks image and caption */
     align-items: center; /* Centers the caption */
-    border: 2px solid rgb(255, 105, 180); /* Softer pink border */
+    border: 2px solid rgb(255, 0, 234); /* Softer pink border */
     background: black; /* Matches aesthetic */
     padding: 5px; /* Adds some spacing inside */
     cursor: grab; /* Ensures whole box is draggable */
@@ -480,20 +480,10 @@ form input[type="submit"]:hover {
     user-select: none;
 }
 
-/*  .artimages img {
-    width: 200px;
-    height: auto;
-    position: absolute;
-    cursor: grab;
-    user-select: none;
-    animation: float 3s infinite ease-in-out alternate; Floating effect
-    transition: transform 0.5s ease-out; /* Smooth drop effect
-} */
-
 .caption {
     margin-top: 5px; /* Space between image and caption */
     font-size: 14px;
-    color: rgb(255, 105, 180); /* Matches border */
+    color: rgb(255, 0, 234); /* Matches border */
     text-align: center;
     font-family: Arial, sans-serif;
     position: relative; /* Ensures proper stacking */
