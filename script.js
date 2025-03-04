@@ -115,10 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let startX = Math.random() * (window.innerWidth - 200);
       let startY = Math.random() * (window.innerHeight - 200);
-      
-      img.style.left = `${startX}px`;
-      img.style.top = `${startY}px`;
-      img.dataset.x = startX; // Store position for transforms
+
+      img.style.transform = `translate(${startX}px, ${startY}px)`;
+      img.dataset.x = startX;
       img.dataset.y = startY;
 
       img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`;
@@ -130,11 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       const img = event.target;
-      let shiftX = event.clientX - parseFloat(img.dataset.x);
-      let shiftY = event.clientY - parseFloat(img.dataset.y);
+      let shiftX = event.clientX - img.dataset.x;
+      let shiftY = event.clientY - img.dataset.y;
 
       img.style.transition = "none"; // Remove transition while dragging
       img.style.animation = "none"; // Stop floating
+      img.style.cursor = "grabbing"; // Change cursor to grabbing
 
       function moveAt(pageX, pageY) {
           let newX = pageX - shiftX;
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           img.dataset.x = newX;
           img.dataset.y = newY;
-          img.style.transform = `translate(${newX}px, ${newY}px)`; // Smooth movement
+          img.style.transform = `translate(${newX}px, ${newY}px)`; // Moves smoothly
       }
 
       function onPointerMove(event) {
@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.removeEventListener("pointermove", onPointerMove);
           img.style.transition = "transform 0.5s ease-out"; // Smooth drop effect
           img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random() * 2}s`; // Resume floating
+          img.style.cursor = "move"; // Change cursor back
       }, { once: true });
 
       img.ondragstart = () => false; // Prevent default drag
