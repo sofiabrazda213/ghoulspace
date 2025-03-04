@@ -31,6 +31,14 @@ header {
     width: 100%;
 }
 
+.animated-overlay {
+    transform: rotate(-30deg) scale(0.8); /* Adjust the angle as needed */
+    position: absolute;
+    top: 200px;   /* Move down from the top */
+    left: 100px;  /* Move right from the left */
+}
+
+
 /*Container for links*/
 .header-links {
     display: flex;
