@@ -113,10 +113,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const images = document.querySelectorAll(".draggable");
 
-  images.forEach(img => {
-      img.addEventListener("mousedown", dragStart);
-      img.addEventListener("touchstart", dragStart, { passive: false }); // Mobile support
-  });
+  images.forEach((img, index) => {
+    // Set a default position if not set
+    img.style.position = "absolute";
+    if (!img.style.left) img.style.left = `${50 + index * 150}px`; // Spread images horizontally
+    if (!img.style.top) img.style.top = `${50 + index * 100}px`; // Spread images vertically
+
+    img.addEventListener("mousedown", dragStart);
+    img.addEventListener("touchstart", dragStart, { passive: false });
+});
 
   function dragStart(event) {
       event.preventDefault(); // Prevent default behavior

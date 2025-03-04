@@ -444,13 +444,13 @@ form input[type="submit"]:hover {
 .artgallery {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 1000px;
     border: 2px dashed #ccc;
     overflow: hidden;
 }
 
 .artimages img {
-    width: 100px;  /* Set a fixed size for draggable images */
+    width: 120px;  /* Set a fixed size for draggable images */
     height: auto;
     position: absolute;  /* Allow images to move freely */
     cursor: grab;
