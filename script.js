@@ -113,10 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const images = document.querySelectorAll(".draggable");
 
-  images.forEach((img, index) => {
+  images.forEach((img) => {
       img.style.position = "absolute";
-
-      // Ensure images are randomly placed to avoid overlap
       img.style.left = `${Math.random() * (window.innerWidth - 200)}px`;
       img.style.top = `${Math.random() * (window.innerHeight - 200)}px`;
 
@@ -127,10 +125,10 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       const img = event.target;
-      img.style.transition = "none"; // Remove transition during dragging
-
       let shiftX = event.clientX - img.getBoundingClientRect().left;
       let shiftY = event.clientY - img.getBoundingClientRect().top;
+
+      img.style.transition = "none"; // Remove transition while dragging
 
       function moveAt(pageX, pageY) {
           img.style.left = `${pageX - shiftX}px`;
@@ -142,12 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       document.addEventListener("pointermove", onPointerMove);
-      
+
       document.addEventListener("pointerup", () => {
           document.removeEventListener("pointermove", onPointerMove);
-          img.style.transition = "transform 0.3s ease-out"; // Smooth drop effect
+          img.style.transition = "transform 0.3s ease-out"; // Smooth drop
       }, { once: true });
 
-      img.ondragstart = () => false; // Disable default drag
+      img.ondragstart = () => false; // Prevent default drag
   }
 });

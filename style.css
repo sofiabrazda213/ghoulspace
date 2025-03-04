@@ -450,12 +450,12 @@ form input[type="submit"]:hover {
 }
 
 .artimages img {
-    width: 200px; /* Ensures images are a reasonable size */
+    width: 200px;
     height: auto;
-    position: absolute; /* Allows free movement */
+    position: absolute;
     cursor: grab;
     user-select: none;
-    transition: transform 0.3s ease-out; /* Smooth effect when dropped */
+    transition: transform 0.3s ease-out;
 }
 
 /* This will ensure images appear at different places initially */
@@ -465,5 +465,5 @@ form input[type="submit"]:hover {
 
 .artimages img:active {
     cursor: grabbing;
-    transform: scale(1.05); /* Slight zoom while dragging */
+    transform: scale(1.1); /* Slight zoom while dragging */
 }
