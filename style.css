@@ -31,7 +31,12 @@ header {
     width: 100%;
 }
 
-.animated-overlay {
+.animated-bow {
+    top: 50px;   /* Move down from the top */
+    left: 50px;  /* Move right from the left */
+}
+
+.animated-clickme {
     transform: rotate(-30deg) scale(0.8) !important; /* Adjust the angle as needed */
     position: absolute;
     top: 200px;   /* Move down from the top */
