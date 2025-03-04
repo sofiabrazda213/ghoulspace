@@ -313,7 +313,7 @@ header {
     width: 100px;
 }
 
-/* Form Styling */
+/* Guest Book Styling */
 
 form {
     margin-top: 20px;
@@ -353,7 +353,7 @@ form input[type="submit"]:hover {
     color: #ffffff;
 }
 
-/* shop pics Styling */
+/* Shop Page Styling */
 .shop-pics {
     display: flex;
     flex-direction: column; /* Stacks photos vertically */
@@ -370,16 +370,7 @@ form input[type="submit"]:hover {
     height: auto; /* Maintains aspect ratio */
 }
 
-/* Photo grid Gallery Styling */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid */
-    gap: 10px;
-    padding: 20px;
-    justify-content: center; /* Center the grid */
-}
-
-/* Images inside the Gallery */
+/* Photo Gallery Styling */
 .gallery img {
     width: 100%; /* Each image takes full width of its grid cell */
     height: auto;
@@ -440,3 +431,32 @@ form input[type="submit"]:hover {
     padding: 10px 0;
   }
   
+  /* Photo grid Gallery Styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid */
+    gap: 10px;
+    padding: 20px;
+    justify-content: center; /* Center the grid */
+}
+
+/* Art Gallery Styling */
+.artgallery {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border: 2px dashed #ccc;
+    overflow: hidden;
+}
+
+.artimages img {
+    width: 100px;  /* Set a fixed size for draggable images */
+    height: auto;
+    position: absolute;  /* Allow images to move freely */
+    cursor: grab;
+    transition: transform 0.2s ease-in-out;
+}
+
+.artimages img:active {
+    cursor: grabbing;
+}

@@ -108,27 +108,21 @@ async function submitMessage(event) {
 
 //js for art gal
 document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.querySelector(".gallery"); // Check if gallery exists
-  if (!gallery) return; // Exit if not on the Art Gallery page
+  const gallery = document.querySelector(".artgallery");
+  if (!gallery) return; // Ensure script runs only if .artgallery exists
 
   const images = document.querySelectorAll(".draggable");
 
   images.forEach(img => {
       img.addEventListener("mousedown", dragStart);
-      img.addEventListener("touchstart", dragStart); // Mobile support
+      img.addEventListener("touchstart", dragStart, { passive: false }); // Mobile support
   });
 
   function dragStart(event) {
-      event.preventDefault();
+      event.preventDefault(); // Prevent default behavior
       let img = event.target;
-
-      // Ensure the image has position absolute and initial values
-      img.style.position = "absolute";
-      if (!img.style.left) img.style.left = img.offsetLeft + "px";
-      if (!img.style.top) img.style.top = img.offsetTop + "px";
-    
-      let shiftX = event.clientX - img.getBoundingClientRect().left;
-      let shiftY = event.clientY - img.getBoundingClientRect().top;
+      let shiftX = (event.clientX || event.touches[0].clientX) - img.getBoundingClientRect().left;
+      let shiftY = (event.clientY || event.touches[0].clientY) - img.getBoundingClientRect().top;
 
       function moveAt(pageX, pageY) {
           img.style.left = pageX - shiftX + "px";
@@ -136,17 +130,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       function onMouseMove(event) {
-          moveAt(event.pageX, event.pageY);
+          moveAt(event.pageX || event.touches[0].pageX, event.pageY || event.touches[0].pageY);
       }
 
       document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("touchmove", onMouseMove, { passive: false });
+
       document.addEventListener("mouseup", () => {
           document.removeEventListener("mousemove", onMouseMove);
       }, { once: true });
 
-      img.ondragstart = () => false;
+      document.addEventListener("touchend", () => {
+          document.removeEventListener("touchmove", onMouseMove);
+      }, { once: true });
+
+      img.ondragstart = () => false; // Disable default drag behavior
   }
 });
+
 
 
 
