@@ -42,8 +42,8 @@ header {
 .animated-clickme {
     transform: rotate(-30deg) scale(0.8) !important; /* Adjust the angle as needed */
     position: absolute;
-    top: 125px;   /* Move down from the top */
-    left: 70px;  /* Move right from the left */
+    top: 110px;   /* Move down from the top */
+    left: 100px;  /* Move right from the left */
 }
 
 
