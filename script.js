@@ -108,23 +108,23 @@ async function submitMessage(event) {
 
 //js for art gal
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".draggable");
+  const images = document.querySelectorAll(".image-container");
 
   images.forEach((img) => {
-      img.style.position = "absolute";
+      img.style.position = "absolute"; // Ensure absolute positioning
 
-      // Randomly place images within the window boundaries
+      // Ensure all images are randomly placed and **not overlapping**
       let startX = Math.random() * (window.innerWidth - 250);
       let startY = Math.random() * (window.innerHeight - 250);
 
       img.style.left = `${startX}px`;
       img.style.top = `${startY}px`;
 
-      // Store the initial position
+      // Store position data
       img.dataset.x = startX;
       img.dataset.y = startY;
 
-      // Add floating effect
+      // Floating effect
       img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random()}s`;
 
       // Enable dragging
@@ -133,13 +133,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startDrag(event) {
       event.preventDefault();
-      const img = event.target.closest(".draggable");
+      const img = event.target.closest(".image-container");
 
       let shiftX = event.clientX - img.getBoundingClientRect().left;
       let shiftY = event.clientY - img.getBoundingClientRect().top;
 
-      img.style.transition = "none"; // Remove smooth transitions while dragging
-      img.style.animation = "none"; // Stop floating effect
+      img.style.transition = "none"; // Remove transition while dragging
+      img.style.animation = "none"; // Stop floating
       img.style.cursor = "grabbing";
 
       function moveAt(pageX, pageY) {
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.addEventListener("pointerup", () => {
           document.removeEventListener("pointermove", onPointerMove);
-          img.style.transition = "transform 0.3s ease-out"; // Smooth drop effect
+          img.style.transition = "transform 0.3s ease-out"; // Smooth drop
           img.style.animation = `float 3s infinite ease-in-out alternate ${Math.random()}s`; // Resume floating
           img.style.cursor = "grab";
       }, { once: true });

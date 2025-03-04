@@ -461,23 +461,21 @@ form input[type="submit"]:hover {
 }
 
 .image-container {
-    position: absolute; /* Ensures free movement */
+    position: absolute; /* Allows free movement */
     display: flex;
-    flex-direction: column; /* Stacks image and caption */
-    align-items: center; /* Centers the caption */
-    border: 2px solid rgb(255, 0, 234); /* Softer pink border */
-    background: black; /* Matches aesthetic */
-    padding: 5px; /* Adds some spacing inside */
-    cursor: grab; /* Ensures whole box is draggable */
+    flex-direction: column; /* Stacks image & caption */
+    align-items: center; /* Centers caption */
+    border: 2px solid rgb(255, 0, 234); /* Pink border */
+    background: black;
+    padding: 5px;
+    cursor: grab;
     user-select: none;
 }
 
 .image-container img {
-    width: 200px; /* Makes images square */
-    height: 200px; /* Ensures square shape */
-    object-fit: cover; /* Crops to fit square */
-    cursor: grab; /* Ensures proper dragging */
-    user-select: none;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .caption {
