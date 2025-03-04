@@ -361,7 +361,6 @@ form input[type="submit"]:hover {
     justify-content: center; /* Centers them inside the container */
     gap: 10px; /* Adds space between each photo */
     width: 60%; /* Ensures it takes full width */
-    margin: 0 auto; /* Centers the whole group on the page */
     text-align: center; /* Ensures alignment */
 }
 
@@ -373,21 +372,16 @@ form input[type="submit"]:hover {
 
 /* Photo grid Gallery Styling */
 .gallery {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    border: 2px dashed #ccc;
-    overflow: hidden;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); Creates a responsive grid
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid */
     gap: 10px;
     padding: 20px;
-    justify-content: center; Center the grid */
+    justify-content: center; /* Center the grid */
 }
 
 /* Images inside the Gallery */
 .gallery img {
-    max-width: 100%; /* Each image takes full width of its grid cell */
+    width: 100%; /* Each image takes full width of its grid cell */
     height: auto;
     border: 2px solid #333;
     border-radius: 8px;
@@ -395,15 +389,8 @@ form input[type="submit"]:hover {
     transition: transform 0.3s ease-in-out;
 }
 
-.artimages img {
-    width: 100px; 
-    height: auto;
-    position: absolute;
-    cursor: grab;
-}
-
-.artimages img:active {
-    cursor: grabbing;
+.gallery img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Modal Styling */
