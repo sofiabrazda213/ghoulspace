@@ -450,13 +450,18 @@ form input[type="submit"]:hover {
 }
 
 .artimages img {
-    width: 200px; /* Scale images for better look */
+    width: 200px; /* Ensures images are a reasonable size */
     height: auto;
     position: absolute; /* Allows free movement */
     cursor: grab;
     user-select: none;
-    transition: transform 0.3s ease-in-out; /* Smooth effect when dropped */
+    transition: transform 0.3s ease-out; /* Smooth effect when dropped */
 }
+
+/* This will ensure images appear at different places initially */
+.artimages img:nth-child(1) { top: 50px; left: 50px; }
+.artimages img:nth-child(2) { top: 200px; left: 300px; }
+.artimages img:nth-child(3) { top: 400px; left: 500px; }
 
 .artimages img:active {
     cursor: grabbing;

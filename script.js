@@ -109,14 +109,14 @@ async function submitMessage(event) {
 //js for art gal
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector(".artgallery");
-  if (!gallery) return; // Ensure script runs only on Art Gallery page
+  if (!gallery) return;
 
   const images = document.querySelectorAll(".draggable");
 
   images.forEach((img, index) => {
       img.style.position = "absolute";
-      
-      // Randomize initial placement
+
+      // Ensure images are randomly placed to avoid overlap
       img.style.left = `${Math.random() * (window.innerWidth - 200)}px`;
       img.style.top = `${Math.random() * (window.innerHeight - 200)}px`;
 
@@ -125,11 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startDrag(event) {
       event.preventDefault();
+
       const img = event.target;
+      img.style.transition = "none"; // Remove transition during dragging
+
       let shiftX = event.clientX - img.getBoundingClientRect().left;
       let shiftY = event.clientY - img.getBoundingClientRect().top;
-
-      img.style.transition = "none"; // Disable transitions during drag
 
       function moveAt(pageX, pageY) {
           img.style.left = `${pageX - shiftX}px`;
@@ -141,11 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       document.addEventListener("pointermove", onPointerMove);
+      
       document.addEventListener("pointerup", () => {
           document.removeEventListener("pointermove", onPointerMove);
-          img.style.transition = "transform 0.3s ease-out"; // Add smooth drop effect
+          img.style.transition = "transform 0.3s ease-out"; // Smooth drop effect
       }, { once: true });
 
-      img.ondragstart = () => false; // Prevents default drag behavior
+      img.ondragstart = () => false; // Disable default drag
   }
 });
