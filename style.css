@@ -33,7 +33,7 @@ header {
 
 .animated-bow {
     position: absolute; /* Ensures it floats over other elements */
-    top: 30px; /* Adjust this value to move it down slightly */
+    top: 50px; /* Adjust this value to move it down slightly */
     left: 50%; /* Move it to the center */
     transform: translateX(-50%); /* Perfect centering */
     z-index: 100; /* Ensures it stays on top of other elements */
@@ -48,7 +48,7 @@ header {
 
 .shewhomustbeobeyed {
     opacity: 0.7;
-    top: 25;   /* Move down from the top */
+    top: 20px;   /* Move down from the top */
     left: 50px;  /* Move right from the left */
     position: fixed; /* Keeps it on top even when scrolling */
     object-fit: cover; /* Ensures the image covers the full area */
