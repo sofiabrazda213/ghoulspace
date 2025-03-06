@@ -43,12 +43,12 @@ header {
     transform: rotate(-30deg) scale(0.8) !important; /* Adjust the angle as needed */
     position: absolute;
     top: 42px;   /* Move down from the top */
-    left: 790px;  /* Move right from the left */
+    left: 800px;  /* Move right from the left */
 }
 
 .shewhomustbeobeyed {
     opacity: 0.7;
-    top: -70px;   /* Move down from the top */
+    top: -55px;   /* Move down from the top */
     left: 40px;  /* Move right from the left */
     position: fixed; /* Keeps it on top even when scrolling */
     object-fit: cover; /* Ensures the image covers the full area */
