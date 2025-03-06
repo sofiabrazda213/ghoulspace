@@ -43,7 +43,7 @@ header {
     transform: rotate(-30deg) scale(0.8) !important; /* Adjust the angle as needed */
     position: absolute;
     top: 42px;   /* Move down from the top */
-    left: 750px;  /* Move right from the left */
+    left: 700px;  /* Move right from the left */
 }
 
 .shewhomustbeobeyed {
