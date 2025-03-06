@@ -398,7 +398,7 @@ form input[type="submit"]:hover {
 
 .shop-button {
     position: absolute; /* Allows precise placement */
-    top: 20px;  /* Adjust this value to move up/down */
+    top: 100px;  /* Adjust this value to move up/down */
     left: 50%;  /* Center it horizontally */
     display: flex;
     align-items: center;
