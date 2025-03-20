@@ -48,7 +48,7 @@ header {
 
 .shewhomustbeobeyed {
     opacity: 0.7;
-    top: -55px;   /* Move down from the top */
+    top: -70px;   /* Move down from the top */
     left: 30px;  /* Move right from the left */
     position: fixed; /* Keeps it on top even when scrolling */
     object-fit: cover; /* Ensures the image covers the full area */
